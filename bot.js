@@ -13,11 +13,13 @@ const bot = mineflayer.createBot({
  version: config.version,
 }); // Создание бота
 
+bot.once('login', () =>  {
+ console.log('Зашел!')
 
+})
 
 bot.on('login', () => {
  bot.chat('/reg ' + config.password);
- console.log('Зашел!')
 });
 
 bot.on('spawn', () => {
